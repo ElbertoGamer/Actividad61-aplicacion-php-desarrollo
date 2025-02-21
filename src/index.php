@@ -38,7 +38,7 @@ include_once("config.php");
 			<th>Acciones</th>
 		</tr>
 	</thead>
-	<tbdody>
+	<tbody>
 
 <?php
 /*Se realiza una consulta de selección la tabla empleados ordenados y almacena todos los registros en una estructura especial PARECIDA a una "tabla" llamada $resultado.
@@ -46,9 +46,6 @@ Cada fila y cada columna de la tabla se corresponde con un registro y campo de l
 */
 
 $resultado = $mysqli->query("SELECT * FROM Animes ORDER BY titulo");
-
-//Cierra la conexión de la BD
-$mysqli->close();
 
 /*
 A continuación indicamos distintos manera de leer cada fila de la tabla anterior: 
@@ -87,6 +84,7 @@ El bucle finaliza cuando se llegue a la última línea (o registro) de la tabla 
 A medida que avanza se va consturyendo cada fila de la tabla HTML con todos los campos del empleado, hasta completar todos los registros*/
 
 while($fila = $resultado->fetch_array()) {
+	echo "<tr>";
 	echo "<td>".$fila['titulo']."</td>\n";
 	echo "<td>".$fila['genero']."</td>\n";
 	echo "<td>".$fila['episodios']."</td>\n";
@@ -104,7 +102,7 @@ Este forma de pasar el dato se conoce como: método GET*/
 	}//fin mientras
  }//fin si
 ?>
-	</tbdody>
+	</tdody>
 	</table>
 </div>
 <div>
@@ -128,7 +126,7 @@ Este forma de pasar el dato se conoce como: método GET*/
 			<th>Acciones</th>
 		</tr>
 	</thead>
-	<tbdody>
+	<tbody>
 
 <?php
 /*Se realiza una consulta de selección la tabla empleados ordenados y almacena todos los registros en una estructura especial PARECIDA a una "tabla" llamada $resultado.
@@ -177,6 +175,7 @@ El bucle finaliza cuando se llegue a la última línea (o registro) de la tabla 
 A medida que avanza se va consturyendo cada fila de la tabla HTML con todos los campos del empleado, hasta completar todos los registros*/
 
 while($fila = $resultado->fetch_array()) {
+	echo "<tr>";
 	echo "<td>".$fila['nombre']."</td>\n";
 	echo "<td>".$fila['subgenero']."</td>\n";
 	echo "<td>".$fila['plataforma']."</td>\n";
@@ -194,7 +193,7 @@ Este forma de pasar el dato se conoce como: método GET*/
 	}//fin mientras
  }//fin si
 ?>
-	</tbdody>
+	</tbody>
 	</table>
 </div>
 </main>
