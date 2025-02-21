@@ -106,11 +106,11 @@ Este forma de pasar el dato se conoce como: método GET*/
  }//fin si
 ?>
 	</tbody>
-	<ble>
+	</table>
+	</main>
+	<footer>
+    	Created by the IES Miguel Herrero team &copy; 2025
+  	</footer>
 </div>
-</main>
-<footer>
-    Created by the IES Miguel Herrero team &copy; 2025
-</footer>
 </body>
 </html>
