@@ -97,8 +97,8 @@ while($fila = $resultado->fetch_array()) {
 /* En la última columna se añade dos enlaces para editar y modificar el registro correspondiente. 
 Los datos se pueden enviar entre distintas páginas siguiendo distintos métodos. En este caso el id del registro a editar/eliminar se pasa a través de la URL. 
 Este forma de pasar el dato se conoce como: método GET*/
-		echo "<a href=\"edit.php?idempleado=$fila[id]\">Edición</a>\n";
-		echo "<a href=\"delete.php?idempleado=$fila[id]\" onClick=\"return confirm('¿Está segur@ que desea eliminar este anime?')\" >Eliminar</a></td>\n";
+		echo "<a href=\"edit.php?idanime=$fila[id]\">Edición</a>\n";
+		echo "<a href=\"delete.php?idanime=$fila[id]\" onClick=\"return confirm('¿Está segur@ que desea eliminar este anime?')\">Baja</a></td>\n";
 		echo "</td>";
 		echo "</tr>\n";
 	}//fin mientras
@@ -106,14 +106,12 @@ Este forma de pasar el dato se conoce como: método GET*/
 ?>
 	</tbdody>
 	</table>
-	</main>
 </div>
 <div>
 	<header>
 		<h1>VIDEOJUEGOS</h1>
 	</header>
 
-	<main>
 	<ul>
 		<li><a href="index.php">Inicio</a></li>
 		<li><a href="add.html">Añadir</a></li>
@@ -189,8 +187,8 @@ while($fila = $resultado->fetch_array()) {
 /* En la última columna se añade dos enlaces para editar y modificar el registro correspondiente. 
 Los datos se pueden enviar entre distintas páginas siguiendo distintos métodos. En este caso el id del registro a editar/eliminar se pasa a través de la URL. 
 Este forma de pasar el dato se conoce como: método GET*/
-		echo "<a href=\"edit.php?idempleado=$fila[id]\">Edición</a>\n";
-		echo "<a href=\"delete.php?idempleado=$fila[id]\" onClick=\"return confirm('¿Está segur@ que desea eliminar el videojuego?')\" >Eliminar</a></td>\n";
+		echo "<a href=\"edit.php?idjuego=$fila[id]\">Edición</a>\n";
+		echo "<a href=\"delete.php?idjuego=$fila[id]\" onClick=\"return confirm('¿Está segur@ que desea eliminar este videojuego?')\">Baja</a></td>\n";
 		echo "</td>";
 		echo "</tr>\n";
 	}//fin mientras
@@ -198,8 +196,8 @@ Este forma de pasar el dato se conoce como: método GET*/
 ?>
 	</tbdody>
 	</table>
-	</main>
 </div>
+</main>
 <footer>
     Created by the IES Miguel Herrero team &copy; 2025
 </footer>
