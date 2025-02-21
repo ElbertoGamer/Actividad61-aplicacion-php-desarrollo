@@ -38,7 +38,7 @@ include_once("config.php");
 			<th>Acciones</th>
 		</tr>
 	</thead>
-	<tbody>
+	<tbdody>
 
 <?php
 /*Se realiza una consulta de selección la tabla empleados ordenados y almacena todos los registros en una estructura especial PARECIDA a una "tabla" llamada $resultado.
@@ -105,7 +105,7 @@ Este forma de pasar el dato se conoce como: método GET*/
 	}//fin mientras
  }//fin si
 ?>
-	</tbody>
+	</tbdody>
 	</table>
 	</main>
 	<footer>
