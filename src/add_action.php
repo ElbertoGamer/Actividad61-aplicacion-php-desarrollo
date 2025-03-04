@@ -83,7 +83,7 @@ Escapado con mysqli_real_escape_string(): Se convierte en "O\'Reilly", evitando 
 	else //Sino existen campos de formulario vacíos se procede al alta del nuevo registro
 	{
 //Se ejecuta una sentencia SQL. Inserta (da de alta) el nuevo registro: insert.
-		$result = $mysqli->query("INSERT INTO empleados (nombre, apellido, edad, puesto) VALUES ('$name', '$subgenre', '$platform', '$age', '$developer', '$score')");	
+		$result = $mysqli->query("INSERT INTO Videojuegos (nombre, subgenero, plataforma, año_lanzamiento, desarrollador, puntuacion) VALUES ('$name', '$subgenre', '$platform', '$age', '$developer', '$score')");	
 		//Se cierra la conexión
 		$mysqli->close();
 		echo "<div>Registro añadido correctamente...</div>";
