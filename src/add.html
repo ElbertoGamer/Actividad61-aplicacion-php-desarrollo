@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alta empleado/a</title>
+    <title>Añadir videojuego</title>
 </head>
 <body>
 <div>
 	<header>
-		<h1>ELECTROSHOP S.L.</h1>
+		<h1>Videojuegos</h1>
 	</header>
 	<main>				
 	<ul>
 		<li><a href="index.php">Inicio</a></li>
 		<li><a href="add.html">Alta</a></li>
 	</ul>
-	<h2>Alta empleado/a</h2>
+	<h2>Añadir videojuego:</h2>
 <!--FORMULARIO DE ALTA. Al hacer click en el botón Agregar, llama a la página: add.php (form action="add.php")
 La página: add.php se encargará de proceder a la inserción del registro en la tabla de empleados
 -->
@@ -27,25 +27,34 @@ La página: add.php se encargará de proceder a la inserción del registro en la
 		</div>
 
 		<div>
-			<label for="surname">Apellido</label>
-			<input type="text" name="surname" id="surname" placeholder="apellido" required>
+			<label for="subgenre">Subgénero</label>
+			<input type="text" name="subgenre" id="subgenre" placeholder="subgenero" required>
 		</div>
 
 		<div>
-			<label for="age">Edad</label>
-			<input type="number" name="age" id="age" placeholder="edad" required>
+			<label for="platform">Plataforma</label>
+			<select name="platform" id="platform" placeholder="plataforma" required>
+				<option value="" disabled selected>Seleccione una plataforma</option>
+				<option value="PC">PC</option>
+				<option value="PlayStation 2">PlayStation 2</option>
+				<option value="PlayStation 3">PlayStation 3</option>
+				<option value="PlayStation 4">PlayStation 4</option>
+			</select>
 		</div>
 
 		<div>
-			<label for="job">Puesto</label>
-			<select name="job" id="job" placeholder="puesto" required>
-				<option value="" disabled selected>Seleccione un puesto</option>
-				<option value="Administrativo">Administrativo</option>
-				<option value="Contable">Contable</option>
-				<option value="Dependiente">Dependiente</option>
-				<option value="Gerente">Gerente</option>
-				<option value="Repartidor">Repartidor</option>
-			</select>	
+			<label for="age">Año de Lanzamiento</label>
+			<input type="number" name="age" id="age" placeholder="age" required>	
+		</div>
+
+		<div>
+			<label for="developer">Desarrollador</label>
+			<input type="text" name="developer" id="developer" placeholder="desarrollador" required>
+		</div>
+
+		<div>
+			<label for="score">Puntuación</label>
+			<input type="number" name="score" id="score" placeholder="puntuacion" required>
 		</div>
 
 		<div>
