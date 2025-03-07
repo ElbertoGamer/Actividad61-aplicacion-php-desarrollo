@@ -27,7 +27,7 @@ PHP proporciona el array asociativo $_POST para acceder a la información enviad
 */
 
 //Recoge el id del empleado a eliminar a través de la clave idempleado del array asociativo $_GET y lo almacena en la variable idempleado
-$idvideojuego = $_GET['idvideojuego'];
+$idvideojuego = $_GET['idjuego'];
 
 //Con mysqli_real_scape_string protege caracteres especiales en una cadena para ser usada en una sentencia SQL.
 $idvideojuego = $mysqli->real_escape_string($idvideojuego);
