@@ -77,7 +77,7 @@ if(empty($name) || empty($subgenre) || empty($platform) || empty($age) || empty(
 	else //Se realiza la modificación de un registro de la BD. 
 	{
 		//Se actualiza el registro a modificar: update
-		$mysqli->query("UPDATE Videojuegos SET nombre = '$name', subgenero = '$subgenre', plataforma = '$platform', edad = '$age', desarrollador = '$developer',puntuacion = '$score' WHERE id = $idvideojuego");
+		$mysqli->query("UPDATE Videojuegos SET nombre = '$name', subgenero = '$subgenre', plataforma = '$platform', año_lanzamiento = '$age', desarrollador = '$developer',puntuacion = '$score' WHERE id = $idvideojuego");
 		$mysqli->close();
         echo "<div>Registro editado correctamente...</div>";
 		echo "<a href='index.php'>Ver resultado</a>";
