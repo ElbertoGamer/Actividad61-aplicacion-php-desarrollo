@@ -23,8 +23,6 @@ include_once("config.php");
 	</ul>
 	<h2>Modificación videojuego</h2>
 
-	<!--FORMULARIO DE EDICIÓN. Al hacer click en el botón Guardar, llama a la página (form action="edit_action.php"): edit_action.php
--->
 
 <?php
 
@@ -54,6 +52,9 @@ $score = $fila['puntuacion'];
 //Se cierra la conexión de base de datos
 $mysqli->close();
 ?>
+
+<!--FORMULARIO DE EDICIÓN. Al hacer click en el botón Guardar, llama a la página (form action="edit_action.php"): edit_action.php
+-->
 
 <form action="edit_action.php" method="post">
 			<div>
@@ -105,3 +106,4 @@ $mysqli->close();
 	</div>
 	</body>
 	</html>
+
