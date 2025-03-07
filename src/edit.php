@@ -26,7 +26,36 @@ include_once("config.php");
 	<!--FORMULARIO DE EDICIÓN. Al hacer click en el botón Guardar, llama a la página (form action="edit_action.php"): edit_action.php
 -->
 
-	<form action="edit_action.php" method="post">
+<?php
+
+
+/*Obtiene el id del registro del empleado a modificar, idempleado, a partir de su URL. Este tipo de datos se accede utilizando el método: GET*/
+
+//Recoge el id del empleado a modificar a través de la clave idempleado del array asociativo $_GET y lo almacena en la variable idempleado
+$idvideojuego = $_GET['idjuego'];
+
+//Con mysqli_real_scape_string protege caracteres especiales en una cadena para ser usada en una sentencia SQL.
+$idvideojuego = $mysqli->real_escape_string($idvideojuego);
+
+
+//Se selecciona el registro a modificar: select
+$resultado = $mysqli->query("SELECT nombre, subgenero, plataforma, año_lanzamiento, desarrollador, puntuacion FROM empleados WHERE id = $idvideojuego");
+
+//Se extrae el registro y lo guarda en el array $fila
+//Nota: También se puede utilizar el método fetch_assoc de la siguiente manera: $fila = $resultado->fetch_assoc();
+$fila = $resultado->fetch_array();
+$name = $fila['nombre'];
+$subgenre = $fila['subgenero'];
+$platform = $fila['plataforma'];
+$age = $fila['año_lanzamiento'];
+$developer = $fila['desarrollador'];
+$score = $fila['puntuacion'];
+
+//Se cierra la conexión de base de datos
+$mysqli->close();
+?>
+
+<form action="edit_action.php" method="post">
 			<div>
 				<label for="name">Nombre</label>
 				<input type="text" name="name" id="name" value="<?php echo $name;?>" required>
@@ -76,33 +105,3 @@ include_once("config.php");
 	</div>
 	</body>
 	</html>
-
-<?php
-
-
-/*Obtiene el id del registro del empleado a modificar, idempleado, a partir de su URL. Este tipo de datos se accede utilizando el método: GET*/
-
-//Recoge el id del empleado a modificar a través de la clave idempleado del array asociativo $_GET y lo almacena en la variable idempleado
-$idvideojuego = $_GET['idjuego'];
-
-//Con mysqli_real_scape_string protege caracteres especiales en una cadena para ser usada en una sentencia SQL.
-$idvideojuego = $mysqli->real_escape_string($idvideojuego);
-
-
-//Se selecciona el registro a modificar: select
-$resultado = $mysqli->query("SELECT nombre, subgenero, plataforma, año_lanzamiento, desarrollador, puntuacion FROM empleados WHERE id = $idvideojuego");
-
-//Se extrae el registro y lo guarda en el array $fila
-//Nota: También se puede utilizar el método fetch_assoc de la siguiente manera: $fila = $resultado->fetch_assoc();
-$fila = $resultado->fetch_array();
-$name = $fila['nombre'];
-$subgenre = $fila['subgenero'];
-$platform = $fila['plataforma'];
-$age = $fila['año_lanzamiento'];
-$developer = $fila['desarrollador'];
-$score = $fila['puntuacion'];
-
-//Se cierra la conexión de base de datos
-$mysqli->close();
-?>
-
