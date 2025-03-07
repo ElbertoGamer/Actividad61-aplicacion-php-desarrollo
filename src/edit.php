@@ -8,12 +8,12 @@ include_once("config.php");
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
-	<title>Electroshop S.L.</title>
+	<title>VIDEOJUEGOS</title>
 </head>
 <body>
 <div>
 	<header>
-		<h1>ELECTROSHOP S.L.</h1>
+		<h1>Videojuegos</h1>
 	</header>
 	
 	<main>				
@@ -21,7 +21,7 @@ include_once("config.php");
 		<li><a href="index.php" >Inicio</a></li>
 		<li><a href="add.html" >Alta</a></li>
 	</ul>
-	<h2>Modificación empleado/a</h2>
+	<h2>Modificación videojuego</h2>
 
 
 <?php
@@ -30,22 +30,24 @@ include_once("config.php");
 /*Obtiene el id del registro del empleado a modificar, idempleado, a partir de su URL. Este tipo de datos se accede utilizando el método: GET*/
 
 //Recoge el id del empleado a modificar a través de la clave idempleado del array asociativo $_GET y lo almacena en la variable idempleado
-$idempleado = $_GET['idempleado'];
+$idvideojuego = $_GET['idjuego'];
 
 //Con mysqli_real_scape_string protege caracteres especiales en una cadena para ser usada en una sentencia SQL.
-$idempleado = $mysqli->real_escape_string($idempleado);
+$idvideojuego = $mysqli->real_escape_string($idvideojuego);
 
 
 //Se selecciona el registro a modificar: select
-$resultado = $mysqli->query("SELECT apellido, nombre, edad, puesto FROM empleados WHERE id = $idempleado");
+$resultado = $mysqli->query("SELECT nombre, subgenero, plataforma, año_lanzamiento, desarrollador, puntuacion FROM empleados WHERE id = $idvideojuego");
 
 //Se extrae el registro y lo guarda en el array $fila
 //Nota: También se puede utilizar el método fetch_assoc de la siguiente manera: $fila = $resultado->fetch_assoc();
 $fila = $resultado->fetch_array();
-$surname = $fila['apellido'];
 $name = $fila['nombre'];
-$age = $fila['edad'];
-$job = $fila['puesto'];
+$subgenre = $fila['subgenero'];
+$platform = $fila['plataforma'];
+$age = $fila['año_lanzamiento'];
+$developer = $fila['desarrollador'];
+$score = $fila['puntuacion'];
 
 //Se cierra la conexión de base de datos
 $mysqli->close();
