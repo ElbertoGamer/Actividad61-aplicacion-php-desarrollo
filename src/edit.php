@@ -23,6 +23,59 @@ include_once("config.php");
 	</ul>
 	<h2>Modificación videojuego</h2>
 
+	<!--FORMULARIO DE EDICIÓN. Al hacer click en el botón Guardar, llama a la página (form action="edit_action.php"): edit_action.php
+-->
+
+	<form action="edit_action.php" method="post">
+			<div>
+				<label for="name">Nombre</label>
+				<input type="text" name="name" id="name" value="<?php echo $name;?>" required>
+			</div>
+
+			<div>
+			<label for="subgenre">Subgénero</label>
+			<input type="text" name="subgenre" id="subgenre" value="<?php echo $subgenre;?>" required>
+			</div>
+
+			<div>
+			<label for="platform">Plataforma</label>
+			<select name="platform" id="platform" placeholder="plataforma" required>
+				<option value="<?php echo $platform;?>" selected><?php echo $platform;?></option>
+				<option value="PC">PC</option>
+				<option value="PlayStation 2">PlayStation 2</option>
+				<option value="PlayStation 3">PlayStation 3</option>
+				<option value="PlayStation 4">PlayStation 4</option>
+			</select>
+			</div>
+
+			<div>
+			<label for="age">Año de Lanzamiento</label>
+			<input type="number" name="age" id="age" value="<?php echo $age;?>" required>	
+			</div>
+
+			<div>
+			<label for="developer">Desarrollador</label>
+			<input type="text" name="developer" id="developer" value="<?php echo $developer;?>" required>
+			</div>
+
+			<div>
+			<label for="score">Puntuación</label>
+			<input type="number" name="score" id="score" value="<?php echo $score;?>" required>
+			</div>
+
+			<div >
+				<input type="hidden" name="idempleado" value=<?php echo $idvideojuego;?>>
+				<input type="submit" name="modifica" value="Guardar">
+				<input type="button" value="Cancelar" onclick="location.href='index.php'">
+			</div>
+		</form>
+		</main>	
+		<footer>
+			Created by the IES Miguel Herrero team &copy; 2024
+		</footer>
+	</div>
+	</body>
+	</html>
 
 <?php
 
@@ -52,49 +105,4 @@ $score = $fila['puntuacion'];
 //Se cierra la conexión de base de datos
 $mysqli->close();
 ?>
-
-<!--FORMULARIO DE EDICIÓN. Al hacer click en el botón Guardar, llama a la página (form action="edit_action.php"): edit_action.php
--->
-
-	<form action="edit_action.php" method="post">
-		<div>
-			<label for="name">Nombre</label>
-			<input type="text" name="name" id="name" value="<?php echo $name;?>" required>
-		</div>
-
-		<div>
-			<label for="surname">Apellido</label>
-			<input type="text" name="surname" id="surname" value="<?php echo $surname;?>" required>
-		</div>
-
-		<div>
-			<label for="age">Edad</label>
-			<input type="number" name="age" id="age" value="<?php echo $age;?>" required>
-		</div>
-
-		<div>
-			<label for="job">Puesto</label>
-			<select name="job" id="job" placeholder="puesto">
-				<option value="<?php echo $job;?>" selected><?php echo $job;?></option>
-				<option value="Administrativo">Administrativo</option>
-				<option value="Contable">Contable</option>
-				<option value="Dependiente">Dependiente</option>
-				<option value="Gerente">Gerente</option>
-				<option value="Repartidor">Repartidor</option>
-			</select>	
-		</div>
-
-		<div >
-			<input type="hidden" name="idempleado" value=<?php echo $idempleado;?>>
-			<input type="submit" name="modifica" value="Guardar">
-			<input type="button" value="Cancelar" onclick="location.href='index.php'">
-		</div>
-	</form>
-	</main>	
-	<footer>
-		Created by the IES Miguel Herrero team &copy; 2024
-  	</footer>
-</div>
-</body>
-</html>
 
