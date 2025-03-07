@@ -37,7 +37,7 @@ $idvideojuego = $mysqli->real_escape_string($idvideojuego);
 
 
 //Se selecciona el registro a modificar: select
-$resultado = $mysqli->query("SELECT nombre, subgenero, plataforma, año_lanzamiento, desarrollador, puntuacion FROM empleados WHERE id = $idvideojuego");
+$resultado = $mysqli->query("SELECT nombre, subgenero, plataforma, año_lanzamiento, desarrollador, puntuacion FROM Videojuegos WHERE id = $idvideojuego");
 
 //Se extrae el registro y lo guarda en el array $fila
 //Nota: También se puede utilizar el método fetch_assoc de la siguiente manera: $fila = $resultado->fetch_assoc();
